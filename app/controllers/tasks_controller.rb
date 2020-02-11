@@ -29,12 +29,13 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy
+    @task = Task.find(params[:id])
+    @task.destroy
     redirect_to tasks_path
   end
 
-private
+  private
+
   def task_params
     params.require(:task).permit(:title, :details, :completed)
   end
