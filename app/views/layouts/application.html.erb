@@ -4,12 +4,20 @@
     <title>RailsTaskManager</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="container my-5">
+      <div class="row m-5">
+        <div class="col p-5">
+
     <%= yield %>
+
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,12 +1,12 @@
 <h1>My tasks</h1>
-<ul>
+<ul class="list-inline border-bottom-secondary ">
   <% @tasks.each do |task| %>
   <li>
     <%= check_box_tag(task.title, value = "1", checked = task.completed) %>
     <%= link_to task.title, task_path(task) %>
-    <%= link_to "(delete)", task_delete_path(task), method: :delete, data: {confirm:"Delete #{task.title}?"} %>
-
+    <%= link_to task_delete_path(task), method: :delete, data: {confirm:"Delete #{task.title}?"} do %>
+    <i class="far fa-trash-alt"></i><% end %>
   </li>
   <% end %>
 </ul>
-<p><%= link_to "+ Add a new task", tasks_new_path %></p>
+<p class="py-3"><%= link_to "+ Add a new task", tasks_new_path %></p>
